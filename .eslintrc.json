@@ -1,0 +1,35 @@
+{
+  "extends": ["google"],
+  "parser": "babel-eslint",
+  "plugins": ["graphql"],
+  "rules": {
+    "strict": 0,
+    "semi": [2, "always"],
+    "max-len": "off",
+    "operator-linebreak": [2, "after",  {"overrides": {"?":"ignore", ":": "ignore"}}],
+    "no-class-assign": 0,
+    "require-jsdoc": 0,
+    "one-var": "off",
+    "eqeqeq": [2, "smart"],
+    "no-multiple-empty-lines": [2, {"max": 1}],
+    "max-params": [1, 4],
+    "no-warning-comments": 0,
+    "no-nested-ternary": 0,
+    "space-infix-ops": 0,
+    "space-in-parens": [1, "never"],
+    "object-curly-spacing": [1, "never"],
+    "array-bracket-spacing": [1, "never"],
+    "comma-dangle": 0,
+    "arrow-parens": [1, "as-needed"],
+    "switch-colon-spacing": 0,
+    "quote-props": 0,
+    "no-invalid-this": 0,
+    "indent": [2, 2, {"MemberExpression": 1}]
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+    }
+  },
+  "globals": {
+  }
+}
