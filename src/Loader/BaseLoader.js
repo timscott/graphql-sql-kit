@@ -1,7 +1,6 @@
 import DataLoader from 'dataloader';
 import db from '../db';
 import {camelize, underscore} from 'inflected';
-import {GraphQLScalarType} from 'graphql';
 import hash from 'object-hash';
 
 Set.prototype.subSet = function(otherSet) {
@@ -85,7 +84,6 @@ class BaseLoader {
     return value;
   }
   _makeKey(id, args) {
-    hash({foo: 1});
     return {id, args, fields: new Set(Object.keys(this.projectionMap))};
   }
   _doLoad(id, args) {
@@ -106,7 +104,8 @@ class BaseLoader {
       if (columnDirective && (!columnDirective.name || columnDirective.none)) {
         return result;
       }
-      if (columnDirective || resolveType(field.type).constructor === GraphQLScalarType) {
+      // TODO: Is this the best way to know an leaf node?
+      if (columnDirective || resolveType(field.type).constructor.name === 'GraphQLScalarType') {
         const columnName = columnDirective
           ? columnDirective.name
           : fieldName === this.pkFieldName

@@ -1,7 +1,6 @@
 {
   "extends": ["google"],
   "parser": "babel-eslint",
-  "plugins": ["graphql"],
   "rules": {
     "strict": 0,
     "semi": [2, "always"],
