@@ -4,6 +4,7 @@
   "description": "A set of tools for a performant graphql server accessing data from a relational database.",
   "author": "Tim Scott <tscott@lunaversesoftware.com> (http://timscott.github.io)",
   "license": "MIT",
+  "main": "dist/index.js",
   "scripts": {
     "prepare": "babel src --out-dir dist"
   },
