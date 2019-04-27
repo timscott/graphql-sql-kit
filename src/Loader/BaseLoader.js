@@ -1,5 +1,5 @@
 import DataLoader from 'dataloader';
-import db from '../db';
+import {getDb} from '../db';
 import {camelize, underscore} from 'inflected';
 import hash from 'object-hash';
 
@@ -49,7 +49,7 @@ class BaseLoader {
       }
       const projection = projectedFields.reduce((result, fieldName) => {
         const columnName = this.projectionMap[fieldName];
-        let field = db().ref(columnName);
+        let field = getDb().ref(columnName);
         field = columnName === fieldName ? field : field.as(fieldName);
         result.push(field);
         return result;

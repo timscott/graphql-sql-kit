@@ -6,9 +6,9 @@ const initDb = config => {
   instance = knex(config);
 };
 
-const db = () => instance;
+const getDb = () => instance;
 
 export {
-  db as default,
+  getDb,
   initDb
 };
