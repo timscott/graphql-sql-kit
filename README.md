@@ -1,1 +1,1 @@
-# graphql-dynamic-sql
+# graphql-sql-kit
