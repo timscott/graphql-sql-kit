@@ -1,10 +1,12 @@
 import knex from 'knex';
 
-let db;
+let instance;
 
 const initDb = config => {
-  db = knex(config);
+  instance = knex(config);
 };
+
+const db = () => instance;
 
 export {
   db as default,

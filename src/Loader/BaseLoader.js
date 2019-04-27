@@ -49,7 +49,7 @@ class BaseLoader {
       }
       const projection = projectedFields.reduce((result, fieldName) => {
         const columnName = this.projectionMap[fieldName];
-        let field = db.ref(columnName);
+        let field = db().ref(columnName);
         field = columnName === fieldName ? field : field.as(fieldName);
         result.push(field);
         return result;
