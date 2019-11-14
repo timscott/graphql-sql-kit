@@ -1,4 +1,5 @@
 import {SchemaDirectiveVisitor} from 'apollo-server';
+import {defaultFieldResolver} from 'graphql';
 
 class FkDirective extends SchemaDirectiveVisitor {
   // Do nothing. We just want the metadata for the parent resolver.
